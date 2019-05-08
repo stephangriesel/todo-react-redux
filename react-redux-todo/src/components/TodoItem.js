@@ -28,10 +28,16 @@ export class TodoItem extends Component {
           {title}
           <button
             className="delete-btn"
-            onClick={this.props.deleteTodo.bind(this, id)}
-          >
+            onClick={this.props.deleteTodo.bind(this, id)}>
             X
-        </button>
+          </button>
+          <button
+            className="edit-btn"
+            onClick={this.props.editTodo.bind(this, id)}>
+            EDIT
+          </button>
+
+
         </p>
       </div>
     )

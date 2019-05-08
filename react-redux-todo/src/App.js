@@ -2,30 +2,36 @@ import React, { Component } from 'react';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import Header from './components/Header';
+import EditTodo from './components/EditTodo';
 import './App.css';
+import uuid from 'uuid';
 
 class App extends Component {
   state = {
     todos: [
       {
-        id: 1,
+        id: uuid.v4(),
         title: 'Create react app',
         completed: false,
+        edit: false
       },
       {
-        id: 2,
+        id: uuid.v4(),
         title: 'Redux it',
         completed: true,
+        edit: false
       },
       {
-        id: 3,
+        id: uuid.v4(),
         title: 'Style it',
         completed: false,
+        edit: false
       },
       {
-        id: 4,
+        id: uuid.v4(),
         title: 'Test it',
         completed: false,
+        edit: false
       }
     ]
   }
@@ -53,7 +59,29 @@ class App extends Component {
   }
 
   addTodo = (title) => {
-    console.log(title)
+    console.log("Add todo:" + title)
+    const newTodo = {
+      id:uuid.v4(),
+      title:title, // es6 i can just use title but keeping this as is for reference for now
+      completed: false
+    }
+    this.setState({ todos: [
+      ...this.state.todos, newTodo // spread (copy) what is in array & add in new todo
+    ]
+  });
+  }
+
+  editTodo = (title) => {
+    console.log("Edit todo:" + title)
+    const editTodo = {
+      id:uuid.v4(),
+      title:title, // es6 i can just use title but keeping this as is for reference for now
+      completed: false
+    }
+    this.setState({ todos: [
+      ...this.state.todos, editTodo // spread (copy) what is in array & add in new todo
+    ]
+  });
   }
 
   render() {
@@ -69,6 +97,7 @@ class App extends Component {
             todos={this.state.todos}
             markComplete={this.markComplete}
             deleteTodo={this.deleteTodo}
+            editTodo={this.editTodo}
           />
         </div>
       </div>

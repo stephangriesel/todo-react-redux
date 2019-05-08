@@ -13,6 +13,7 @@ class Todos extends Component {
         todo={todo}
         markComplete={this.props.markComplete}
         deleteTodo={this.props.deleteTodo}
+        editTodo={this.props.editTodo}
         />
     ));
   }
