@@ -15,5 +15,13 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephangriesel/todo-react-redux.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stephangriesel/todo-react-redux/issues"
+  },
+  "homepage": "https://github.com/stephangriesel/todo-react-redux#readme"
 }
