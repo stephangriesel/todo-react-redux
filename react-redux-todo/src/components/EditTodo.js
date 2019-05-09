@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
 class EditTodo extends Component {
-  state = {
-    edited: false
-  }
+  // state = {
+  //   edited: false
+  // }
+
 
   onSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +31,7 @@ class EditTodo extends Component {
         />
         <button
           type="submit">
-          Edit
+          Edit2
         </button>
       </form>
     )

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import Header from './components/Header';
 import EditTodo from './components/EditTodo';
+import Notes from './components/pages/Notes';
 import './App.css';
 import uuid from 'uuid';
 
@@ -61,46 +63,56 @@ class App extends Component {
   addTodo = (title) => {
     console.log("Add todo:" + title)
     const newTodo = {
-      id:uuid.v4(),
-      title:title, // es6 i can just use title but keeping this as is for reference for now
+      id: uuid.v4(),
+      title: title, // es6 i can just use title but keeping this as is for reference for now
       completed: false
     }
-    this.setState({ todos: [
-      ...this.state.todos, newTodo // spread (copy) what is in array & add in new todo
-    ]
-  });
+    this.setState({
+      todos: [
+        ...this.state.todos, newTodo // spread (copy) what is in array & add in new todo
+      ]
+    });
   }
 
   editTodo = (title) => {
     console.log("Edit todo:" + title)
     const editTodo = {
-      id:uuid.v4(),
-      title:title, // es6 i can just use title but keeping this as is for reference for now
+      id: uuid.v4(),
+      title: title, // es6 i can just use title but keeping this as is for reference for now
       completed: false
     }
-    this.setState({ todos: [
-      ...this.state.todos, editTodo // spread (copy) what is in array & add in new todo
-    ]
-  });
+    this.setState({
+      todos: [
+        ...this.state.todos, editTodo // spread (copy) what is in array & add in new todo
+      ]
+    });
   }
 
   render() {
     console.log(this.state.todos);
     return (
-      <div className="App">
-        <div className="container">
-          <Header />
-          <AddTodo
-            addTodo={this.addTodo}
-          />
-          <Todos
-            todos={this.state.todos}
-            markComplete={this.markComplete}
-            deleteTodo={this.deleteTodo}
-            editTodo={this.editTodo}
-          />
+      <Router>
+        <div className="App">
+          <div className="container">
+            <Header />
+            <Route exact path="/" render={props => (
+              <React.Fragment>
+                <AddTodo
+                  addTodo={this.addTodo}
+                />
+                <Todos
+                  todos={this.state.todos}
+                  markComplete={this.markComplete}
+                  deleteTodo={this.deleteTodo}
+                  editTodo={this.editTodo}
+                />
+              </React.Fragment>
+            )} />
+            <Route path="/notes" component={Notes} />
+
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
