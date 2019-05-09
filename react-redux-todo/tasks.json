@@ -1,20 +1,34 @@
 {
   "todos": [
-    { "id": 1,
+    {
+      "id": 1,
       "title": "Create React App",
       "completed": false
     },
-    { "id": 2,
+    {
+      "id": 2,
       "title": "Redux it",
       "completed": false
     },
-    { "id": 3,
+    {
+      "id": 3,
       "title": "Style it",
       "completed": true
     },
-    { "id": 4,
+    {
+      "id": 4,
       "title": "Test it",
       "completed": false
+    },
+    {
+      "title": "test 1",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "title": "tetststysytsyt",
+      "completed": false,
+      "id": 6
     }
   ]
 }

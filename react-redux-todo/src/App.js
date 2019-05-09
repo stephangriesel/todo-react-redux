@@ -43,16 +43,20 @@ class App extends Component {
 
   addTodo = (title) => {
     console.log("Add todo:" + title)
-    const newTodo = {
-      id: uuid.v4(),
-      title: title, // es6 i can just use title but keeping this as is for reference for now
+    axios.post('http://localhost:3004/todos', {
+      title,
       completed: false
-    }
-    this.setState({
+    })
+    .then(res => this.setState({
       todos: [
-        ...this.state.todos, newTodo // spread (copy) what is in array & add in new todo
+        ...this.state.todos, res.data // spread (copy) what is in array & add in new todo
       ]
-    });
+    }));
+    // const newTodo = { << TESTS before adding backend server
+    //   id: uuid.v4(),
+    //   title: title, // es6 i can just use title but keeping this as is for reference for now
+    //   completed: false
+    // }
   }
 
   editTodo = (title) => {
