@@ -33,12 +33,13 @@ class App extends Component {
 
   deleteTodo = (id) => {
     console.log("Delete Todo:" + id)
-    this.setState({
+    axios.delete(`http://localhost:3004/todos/${id}`)
+    .then(res => this.setState({
       todos: [
         ...this.state.todos.filter(todo => // ... spread (copy) operator: The spread operator allows an iterable to spread or expand individually inside a receiver. Iterables are anything that can be looped over such as strings, arrays, and sets: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
           todo.id !== id // return id not equal to id passed in
         )]
-    });
+    }));
   }
 
   addTodo = (title) => {
