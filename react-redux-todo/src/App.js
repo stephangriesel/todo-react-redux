@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
@@ -10,32 +11,12 @@ import uuid from 'uuid';
 
 class App extends Component {
   state = {
-    todos: [
-      {
-        id: uuid.v4(),
-        title: 'Create react app',
-        completed: false,
-        edit: false
-      },
-      {
-        id: uuid.v4(),
-        title: 'Redux it',
-        completed: true,
-        edit: false
-      },
-      {
-        id: uuid.v4(),
-        title: 'Style it',
-        completed: false,
-        edit: false
-      },
-      {
-        id: uuid.v4(),
-        title: 'Test it',
-        completed: false,
-        edit: false
-      }
-    ]
+    todos: []
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:3004/todos')
+    .then(res => this.setState({ todos: res.data }))
   }
 
   markComplete = (id) => {
