@@ -75,27 +75,27 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className="container">
+          <main className="container">
             <Header />
             <Route exact path="/" render={props => (
               <React.Fragment>
-                <div id="primary">
+                <section id="primary">
                 <AddTodo
                   addTodo={this.addTodo}
                 />
-                </div>
-                <div id="card">
+                </section>
+                <section id="card">
                 <Todos
                   todos={this.state.todos}
                   markComplete={this.markComplete}
                   deleteTodo={this.deleteTodo}
                 />
-                </div>
+                </section>
               </React.Fragment>
             )} />
             <Route path="/notes" component={Notes} />
 
-          </div>
+          </main>
         </div>
       </Router>
     );

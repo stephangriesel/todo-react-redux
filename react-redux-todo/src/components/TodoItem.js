@@ -6,9 +6,6 @@ export class TodoItem extends Component {
 
   getStyle = () => { // Functional component to add strikethrough if todo has been completed
     return {
-      background: '#777777',
-      padding: '12px',
-      borderBottom: '1px #979797 solid',
       textDecoration: this.props.todo.completed ? // The conditional (ternary) operator is the only JavaScript operator that takes three operands. This operator is frequently used as a shortcut for the if statement: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
         'line-through' : 'none'
     }
@@ -17,7 +14,7 @@ export class TodoItem extends Component {
   render() {
     const { id, title } = this.props.todo; // destructuring to pull out properties
     return (
-      <div style={this.getStyle()}>
+      <div id="card-item" style={this.getStyle()}>
         <p>
           <input
             type="checkbox"
