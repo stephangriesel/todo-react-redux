@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export class TodoItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: this.props.title
+    }
+  }
 
   getStyle = () => { // Functional component to add strikethrough if todo has been completed
     return {
@@ -21,7 +27,9 @@ export class TodoItem extends Component {
   showEditTodoForm = () => {
     if(this.state.isShowing) {
       return(
+        <div>
         <h1>The Form</h1>
+        </div>
       )
     }
   }
@@ -49,7 +57,7 @@ export class TodoItem extends Component {
           onClick={() => this.toggleForm()}>
           EDIT
           </button>
-          {this.showEditTodoForm}
+          {this.showEditTodoForm()}
         </div>
       </div>
     )
