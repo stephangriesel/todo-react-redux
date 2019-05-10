@@ -30,6 +30,7 @@ html {
 body {
   font-family: "Muli", sans-serif;
   margin: 0;
+  background-color:color(primary);
 
   .container {
     background-color:color(primary);
@@ -43,14 +44,15 @@ body {
   }
 
   header nav {
+    font-size:2em;
     color:#fff;
-    padding:$padding;
+    // padding:$padding;
     display:block;
     text-transform: uppercase;
     text-align: center;
 
     @include desktop {
-      width:30%;
+      // width:30%;
       font-size:3em;
     }
   }
@@ -100,6 +102,10 @@ main {
     justify-content: center;
     align-content: center;
     align-items: center;
+
+    h1 {
+      margin:0.5em;
+    }
 
 
     @include desktop {

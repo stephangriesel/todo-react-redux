@@ -7,6 +7,7 @@ html {
 body {
   font-family: "Muli", sans-serif;
   margin: 0;
+  background-color: #3387ce;
 }
 
 body .container {
@@ -16,8 +17,8 @@ body .container {
 }
 
 body header nav {
+  font-size: 2em;
   color: #fff;
-  padding: 15px;
   display: block;
   text-transform: uppercase;
   text-align: center;
@@ -25,7 +26,6 @@ body header nav {
 
 @media (min-width: 840px) {
   body header nav {
-    width: 30%;
     font-size: 3em;
   }
 }
@@ -92,6 +92,10 @@ main section#primary {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+main section#primary h1 {
+  margin: 0.5em;
 }
 
 @media (min-width: 840px) {
