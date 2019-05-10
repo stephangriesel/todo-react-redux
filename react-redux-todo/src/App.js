@@ -69,6 +69,15 @@ class App extends Component {
     // }
   }
 
+  editToDo = (title) => {
+    console.log("Edit todo:" + title)
+    axios.put(`http://localhost:5000/todos/${this.props}`,
+      {
+        title
+      }
+    )
+  }
+
 
   render() {
     console.log(this.state.todos);
