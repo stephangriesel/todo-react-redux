@@ -9,10 +9,8 @@ body {
   margin: 0;
 }
 
-body .bg {
+body .container {
   background-color: #3387ce;
-  -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 85%, 21% 100%, 0 100%, 0% 60%, 0 0);
-          clip-path: polygon(50% 0%, 100% 0, 100% 85%, 21% 100%, 0 100%, 0% 60%, 0 0);
   width: 100%;
   height: 100%;
 }

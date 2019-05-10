@@ -76,7 +76,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <main className="container">
-            <Header />
+            {/* <Header /> */}
             <Route exact path="/" render={props => (
               <React.Fragment>
                 <section id="primary">

@@ -23,13 +23,13 @@ class AddTodo extends Component {
   render() {
     return (
       <React.Fragment>
-      {/* <div>
+      <div>
         <nav>
             <h1>Todo List</h1>
             <Link to="/">Home</Link>
             <Link to="/notes">Notes</Link>
           </nav>
-      </div> */}
+      </div>
       <div>
       <form onSubmit={this.onSubmit}>
         <input
