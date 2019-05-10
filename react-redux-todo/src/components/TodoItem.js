@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 export class TodoItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.title
+      editTodo: ''
     }
+  }
+
+  handleFormSubmit = (event) => {
+    const title = this.state.title;
+    event.prevenDefault();
+
+    axios.put(`http://localhost:3004/todos/`,
+      {
+        title
+      },
+    )
+      .then(() => {
+
+      })
+      .catch(error => console.log(error))
   }
 
   getStyle = () => { // Functional component to add strikethrough if todo has been completed
@@ -28,11 +44,25 @@ export class TodoItem extends Component {
     if(this.state.isShowing) {
       return(
         <div>
-        <h1>The Form</h1>
+          <form onSubmit={this.handleFormSubmit}>
+          <input
+              type="text"
+              name="edit todo"
+              placeholder="Edit Your Todo"
+              value={this.state.value}
+              onChange={this.onChange}
+            />
+          </form>
         </div>
       )
     }
   }
+
+  onChange = (e) =>
+  this.setState({
+    [e.target.name]: e.target.value  // demo react tools to show what happens when value changes when typing
+  }
+  );
 
   render() {
     const { id, title } = this.props.todo; // destructuring to pull out properties

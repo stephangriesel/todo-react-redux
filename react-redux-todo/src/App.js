@@ -52,17 +52,17 @@ class App extends Component {
     }));
   }
 
-  editToDo = (title) => {
-    console.log("Edit todo:" + title)
-    axios.put(`http://localhost:3004/todos/${this.props}`, {
-        title
-      })
-      .then(res => this.setState({
-        todos: [
-          ...this.state.todos, res.data
-        ]
-      }));
-  }
+  // editToDo = (title) => {
+  //   console.log("Edit todo:" + title)
+  //   axios.put(`http://localhost:3004/todos/${this.props}`, {
+  //       title
+  //     })
+  //     .then(res => this.setState({
+  //       todos: [
+  //         ...this.state.todos, res.data
+  //       ]
+  //     }));
+  // }
 
 
   render() {
@@ -84,7 +84,7 @@ class App extends Component {
                   todos={this.state.todos}
                   markComplete={this.markComplete}
                   deleteTodo={this.deleteTodo}
-                  editToDo={this.editToDo}
+                  // editToDo={this.editToDo}
                 />
                 </section>
               </React.Fragment>

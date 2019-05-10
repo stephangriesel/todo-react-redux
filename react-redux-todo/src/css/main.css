@@ -69,9 +69,34 @@ main section#card {
 }
 
 main #card-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: #d7e8f6;
   padding: 12px;
   border-bottom: 1px #979797 solid;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #card-item .edit-btn {
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: #FFF;
+  background: #965cc0;
+}
+
+main #card-item .delete-btn {
+  background-color: #3387ce;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-left: 10px;
 }
 
 main section#primary {
@@ -96,6 +121,19 @@ main section#primary {
 
 main section#primary h1 {
   margin: 0.5em;
+}
+
+main section#primary input {
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+main section#primary button {
+  padding: 10px;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
 }
 
 @media (min-width: 840px) {
