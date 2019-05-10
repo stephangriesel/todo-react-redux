@@ -3,7 +3,6 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
-import Header from './components/Header';
 import Notes from './components/pages/Notes';
 import './css/main.css';
 
@@ -40,17 +39,6 @@ class App extends Component {
     }));
   }
 
-  // editTodo = (id) => {
-  //   console.log("Edit Todo:" + id)
-  //   axios.put(`http://localhost:3004/todos/${id}`)
-  //   .then(res => this.setState({
-  //     todos: [
-  //       ...this.state.todos.filter(todo => // ... spread (copy) operator: The spread operator allows an iterable to spread or expand individually inside a receiver. Iterables are anything that can be looped over such as strings, arrays, and sets: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
-  //         todo.id !== id // return id not equal to id passed in
-  //       )]
-  //   }));
-  // }
-
   addTodo = (title) => {
     console.log("Add todo:" + title)
     axios.post('http://localhost:3004/todos', {
@@ -62,20 +50,18 @@ class App extends Component {
         ...this.state.todos, res.data // spread (copy) what is in array & add in new todo
       ]
     }));
-    // const newTodo = { << TESTS before adding backend server
-    //   id: uuid.v4(),
-    //   title: title, // es6 i can just use title but keeping this as is for reference for now
-    //   completed: false
-    // }
   }
 
   editToDo = (title) => {
     console.log("Edit todo:" + title)
-    axios.put(`http://localhost:5000/todos/${this.props}`,
-      {
+    axios.put(`http://localhost:3004/todos/${this.props}`, {
         title
-      }
-    )
+      })
+      .then(res => this.setState({
+        todos: [
+          ...this.state.todos, res.data
+        ]
+      }));
   }
 
 
@@ -98,6 +84,7 @@ class App extends Component {
                   todos={this.state.todos}
                   markComplete={this.markComplete}
                   deleteTodo={this.deleteTodo}
+                  editToDo={this.editToDo}
                 />
                 </section>
               </React.Fragment>

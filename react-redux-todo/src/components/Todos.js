@@ -6,8 +6,7 @@ class Todos extends Component {
 
   render() {
     console.log(this.props.todos)
-    return this.props.todos.map((todo) => ( // map high order array method, return array from array. todo is my placeholder, can be anything. arrow method used.
-      // <h3>{ todo.title }</h3> // todo is the object and title is the property being passed
+    return this.props.todos.map((todo) => ( // map high order array method, return array from array. todo is my placeholder, can be anything. arrow method used. // <h3>{ todo.title }</h3> // todo is the object and title is the property being passed
       <TodoItem
         key={todo.id}
         todo={todo}

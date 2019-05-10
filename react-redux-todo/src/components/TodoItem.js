@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-
 export class TodoItem extends Component {
 
   getStyle = () => { // Functional component to add strikethrough if todo has been completed
@@ -35,10 +34,7 @@ export class TodoItem extends Component {
           <p>
             <input
               type="checkbox"
-              onChange={this.props.markComplete.bind(this, id)} /> {/*
-          ^^^ can also bind this but using arrow function in app.js.
-          ^^^ passing ID up to todos.js & then app.js
-          */}
+              onChange={this.props.markComplete.bind(this, id)} /> {/* ^^^ can also bind this but using arrow function in app.js.^^^ passing ID up to todos.js & then app.js */}
             {title}
             <button
               className="delete-btn"

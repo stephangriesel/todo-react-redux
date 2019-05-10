@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-
 
 class AddTodo extends Component {
   state = {
@@ -26,8 +24,6 @@ class AddTodo extends Component {
         <header>
           <nav>
             <h1>Todo List</h1>
-            {/* <Link to="/">Home</Link>
-            <Link to="/notes">Notes</Link> */}
           </nav>
         </header>
         <div>
