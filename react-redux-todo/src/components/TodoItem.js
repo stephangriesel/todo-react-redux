@@ -33,7 +33,8 @@ export class TodoItem extends Component {
           </button>
           <button
             className="edit-btn"
-            onClick={this.props.editTodo.bind(this, id)}>
+            // onClick={this.props.editTodo.bind(this, id)}
+            >
             EDIT
           </button>
 

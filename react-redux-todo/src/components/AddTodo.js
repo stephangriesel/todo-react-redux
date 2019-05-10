@@ -20,6 +20,7 @@ class AddTodo extends Component {
 
   render() {
     return (
+
       <form onSubmit={this.onSubmit}>
         <input
           type="text"
@@ -33,6 +34,7 @@ class AddTodo extends Component {
           Add
         </button>
       </form>
+
     )
   }
 }

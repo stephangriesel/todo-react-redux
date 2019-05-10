@@ -11,19 +11,9 @@
       "completed": false
     },
     {
-      "id": 3,
-      "title": "Style it",
-      "completed": true
-    },
-    {
       "id": 4,
       "title": "Test it",
       "completed": false
-    },
-    {
-      "title": "And some more",
-      "completed": false,
-      "id": 5
     }
   ]
 }
