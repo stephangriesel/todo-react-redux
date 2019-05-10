@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 
 class AddTodo extends Component {
   state = {
@@ -9,18 +11,26 @@ class AddTodo extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     this.props.addTodo(this.state.title); // need to pass title up so using props
-    this.setState({ title: ''}); // clear field
+    this.setState({ title: '' }); // clear field
   }
 
   onChange = (e) =>
-  this.setState({
-    [e.target.name]: e.target.value  // demo react tools to show what happens when value changes when typing
-  }
-  );
+    this.setState({
+      [e.target.name]: e.target.value  // demo react tools to show what happens when value changes when typing
+    }
+    );
 
   render() {
     return (
-
+      <React.Fragment>
+      {/* <div>
+        <nav>
+            <h1>Todo List</h1>
+            <Link to="/">Home</Link>
+            <Link to="/notes">Notes</Link>
+          </nav>
+      </div> */}
+      <div>
       <form onSubmit={this.onSubmit}>
         <input
           type="text"
@@ -34,7 +44,8 @@ class AddTodo extends Component {
           Add
         </button>
       </form>
-
+      </div>
+      </React.Fragment>
     )
   }
 }

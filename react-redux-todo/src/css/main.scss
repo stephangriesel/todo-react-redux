@@ -31,16 +31,14 @@ body {
   font-family: "Muli", sans-serif;
   margin: 0;
 
-  .container {
+  .bg {
     background-color:color(primary);
     clip-path: polygon(50% 0%, 100% 0, 100% 85%, 21% 100%, 0 100%, 0% 60%, 0 0);
     width: 100%;
     height: 100%;
-    position: absolute;
-    z-index: -1;
 
     @include desktop {
-      clip-path: polygon(0 0, 70% 0, 55% 100%, 0% 100%);
+      // clip-path: polygon(0 0, 70% 0, 55% 100%, 0% 100%);
     }
   }
 
@@ -69,7 +67,7 @@ main {
     display:grid;
     grid-template-columns: 50% auto;
     grid-template-areas:
-      "primary card"
+      "primary card";
   }
 
   section#card {
@@ -96,13 +94,17 @@ main {
 
   section#primary {
     color:#fff;
-    padding:$padding;
     text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
 
     @include desktop {
       grid-area: primary;
       text-align:left;
-      margin:4em 0 0 4em;
     }
 
   }
