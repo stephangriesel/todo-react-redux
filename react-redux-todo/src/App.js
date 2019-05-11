@@ -35,8 +35,8 @@ class App extends Component {
       },
     )
       .then(({data}) => {
-        this.setState(prevSate => {
-          const { todos } = prevSate;
+        this.setState(prevState => {
+          const { todos } = prevState;
           const oldTodoIndex = todos.findIndex(todo => todo.id === data.id )
           const newTodo = {...todos[oldTodoIndex], ...data}
           todos.splice(oldTodoIndex, 1, newTodo)
