@@ -28,6 +28,26 @@ class App extends Component {
     })
   }
 
+  editTodo = (id, title) => {
+    axios.put(`http://localhost:3004/todos/${id}`,
+      {
+        title
+      },
+    )
+      .then(({data}) => {
+        this.setState(prevSate => {
+          const { todos } = prevSate;
+          const oldTodoIndex = todos.findIndex(todo => todo.id === data.id )
+          const newTodo = {...todos[oldTodoIndex], ...data}
+          todos.splice(oldTodoIndex, 1, newTodo)
+
+          return {todos: todos}
+        })
+
+      })
+      .catch(error => console.log(error))
+  }
+
   deleteTodo = (id) => {
     console.log("Delete Todo:" + id)
     axios.delete(`http://localhost:3004/todos/${id}`)
@@ -52,18 +72,6 @@ class App extends Component {
     }));
   }
 
-  // editToDo = (title) => {
-  //   console.log("Edit todo:" + title)
-  //   axios.put(`http://localhost:3004/todos/${this.props}`, {
-  //       title
-  //     })
-  //     .then(res => this.setState({
-  //       todos: [
-  //         ...this.state.todos, res.data
-  //       ]
-  //     }));
-  // }
-
 
   render() {
     console.log(this.state.todos);
@@ -84,7 +92,7 @@ class App extends Component {
                   todos={this.state.todos}
                   markComplete={this.markComplete}
                   deleteTodo={this.deleteTodo}
-                  // editToDo={this.editToDo}
+                  editTodo={this.editTodo}
                 />
                 </section>
               </React.Fragment>

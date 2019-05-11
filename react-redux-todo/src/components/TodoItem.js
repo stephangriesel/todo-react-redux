@@ -3,33 +3,28 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 
 export class TodoItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      editTodo: ''
-    }
+ constructor(props) {
+   super(props);
+  this.state = {
+    isShowing: false,
   }
 
-  handleFormSubmit = (event) => {
-    const title = this.state.title;
-    event.prevenDefault();
-
-    axios.put(`http://localhost:3004/todos/`,
-      {
-        title
-      },
-    )
-      .then(() => {
-
-      })
-      .catch(error => console.log(error))
-  }
-
+  this.formRef = React.createRef()
+}
   getStyle = () => { // Functional component to add strikethrough if todo has been completed
     return {
       textDecoration: this.props.todo.completed ? // The conditional (ternary) operator is the only JavaScript operator that takes three operands. This operator is frequently used as a shortcut for the if statement: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
         'line-through' : 'none'
     }
+  }
+
+  handleFormSubmit = (e) => {
+    e.preventDefault()
+
+    const title = this.formRef.current['title'].value
+    const { id } = this.props.todo
+
+    this.props.editTodo(id, title)
   }
 
   toggleForm = () => {
@@ -41,17 +36,19 @@ export class TodoItem extends Component {
   }
 
   showEditTodoForm = () => {
+    const { title} = this.props.todo
+
     if(this.state.isShowing) {
       return(
         <div>
-          <form onSubmit={this.handleFormSubmit}>
+          <form ref={this.formRef} onSubmit={this.handleFormSubmit}>
           <input
               type="text"
-              name="edit todo"
+              name="title"
               placeholder="Edit Your Todo"
-              value={this.state.value}
-              onChange={this.onChange}
+              defaultValue={title}
             />
+            <input type="submit" value="Save" />
           </form>
         </div>
       )
@@ -65,7 +62,7 @@ export class TodoItem extends Component {
   );
 
   render() {
-    const { id, title } = this.props.todo; // destructuring to pull out properties
+    const { id, title, completed, editTodo } = this.props.todo; // destructuring to pull out properties
     return (
       <div id="card-item" style={this.getStyle()}>
         <div id="card-item-details">
