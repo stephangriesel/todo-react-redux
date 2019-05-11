@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 
 export class TodoItem extends Component {
  constructor(props) {
@@ -8,7 +7,6 @@ export class TodoItem extends Component {
   this.state = {
     isShowing: false,
   }
-
   this.formRef = React.createRef()
 }
   getStyle = () => { // Functional component to add strikethrough if todo has been completed
@@ -40,15 +38,21 @@ export class TodoItem extends Component {
 
     if(this.state.isShowing) {
       return(
-        <div>
-          <form ref={this.formRef} onSubmit={this.handleFormSubmit}>
+        <div id="card-item-edit">
+          <form
+            ref={this.formRef}
+            onSubmit={this.handleFormSubmit}>
           <input
               type="text"
               name="title"
               placeholder="Edit Your Todo"
               defaultValue={title}
             />
-            <input type="submit" value="Save" />
+            <button
+              className="save-btn"
+              type="submit">
+              <i class="far fa-save"></i>
+              </button>
           </form>
         </div>
       )
@@ -62,7 +66,7 @@ export class TodoItem extends Component {
   );
 
   render() {
-    const { id, title, completed, editTodo } = this.props.todo; // destructuring to pull out properties
+    const { id, title } = this.props.todo; // destructuring to pull out properties // CHANGE , completed, editTodo
     return (
       <div id="card-item" style={this.getStyle()}>
         <div id="card-item-details">
@@ -74,7 +78,7 @@ export class TodoItem extends Component {
             <button
               className="delete-btn"
               onClick={this.props.deleteTodo.bind(this, id)}>
-              X
+              <i class="far fa-trash-alt"></i>
           </button>
           </p>
         </div>
@@ -82,7 +86,7 @@ export class TodoItem extends Component {
           <button
           className="edit-btn"
           onClick={() => this.toggleForm()}>
-          EDIT
+          <i class="far fa-edit"></i>
           </button>
           {this.showEditTodoForm()}
         </div>

@@ -92,11 +92,40 @@ main #card-item .edit-btn {
 }
 
 main #card-item .delete-btn {
+  color: #FFFFFF;
   background-color: #3387ce;
   border: none;
   outline: none;
   padding: 10px;
   margin-left: 10px;
+}
+
+main #card-item .save-btn {
+  background-color: #39bcaf;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+main #card-item #card-item-edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main #card-item #card-item-edit input {
+  padding: 10px;
+  outline: none;
+  border: 0;
 }
 
 main section#primary {

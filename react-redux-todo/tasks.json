@@ -1,21 +1,22 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "Create React App",
-      "completed": false
-    },
-    {
-      "title": "Redux it..",
-      "id": 2
-    },
-    {
       "title": "Test it",
       "id": 4
     },
     {
-      "title": "Style It",
+      "title": "Style It again",
       "id": 5
+    },
+    {
+      "title": "React It",
+      "completed": false,
+      "id": 6
+    },
+    {
+      "title": "Redux it",
+      "completed": false,
+      "id": 7
     }
   ]
 }

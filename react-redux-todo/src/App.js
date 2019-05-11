@@ -29,9 +29,10 @@ class App extends Component {
   }
 
   editTodo = (id, title) => {
+    console.log("Edit Todo:" + title)
     axios.put(`http://localhost:3004/todos/${id}`,
       {
-        title
+        title,
       },
     )
       .then(({data}) => {
