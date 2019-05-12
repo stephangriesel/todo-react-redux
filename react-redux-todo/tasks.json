@@ -1,11 +1,11 @@
 {
   "todos": [
     {
-      "title": "Test of course",
+      "title": "Test properly",
       "id": 4
     },
     {
-      "title": "Style nice",
+      "title": "Style",
       "id": 5
     },
     {
@@ -15,6 +15,11 @@
     {
       "title": "Redux wow",
       "id": 7
+    },
+    {
+      "title": "Watch video",
+      "completed": false,
+      "id": 8
     }
   ]
 }

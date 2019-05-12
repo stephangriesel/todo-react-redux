@@ -3,22 +3,32 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
-import Notes from './components/pages/Notes';
 import './css/main.css';
+
+// Redux
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+
+const store = createStore(() => [], {}, applyMiddleware());
+
 
 class App extends Component {
   constructor(props) {
     super(props);
-    state = {
-      todos: []
-    }
+    // state = {
+    //   todos: []
+    // }
   }
 
+  state = {
+    todos: []
+  }
 
   componentDidMount() {
     console.log('Todos component did indeed mount...')
     axios.get('http://localhost:3004/todos')
     .then(res => this.setState({ todos: res.data }))
+    console.log(this.state.todos);
   }
 
   markComplete = (id) => {
@@ -82,6 +92,7 @@ class App extends Component {
   render() {
     // console.log(this.state.todos);
     return (
+      <Provider store={store}>
       <Router>
         <div className="App">
           <main className="container">
@@ -102,11 +113,11 @@ class App extends Component {
                 </section>
               </React.Fragment>
             )} />
-            <Route path="/notes" component={Notes} />
 
           </main>
         </div>
       </Router>
+      </Provider>
     );
   }
 }

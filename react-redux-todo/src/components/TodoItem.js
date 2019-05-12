@@ -34,7 +34,7 @@ export class TodoItem extends Component {
   }
 
   showEditTodoForm = () => {
-    const { title} = this.props.todo
+    const { title } = this.props.todo
 
     if(this.state.isShowing) {
       return(
@@ -59,7 +59,7 @@ export class TodoItem extends Component {
   }
 
   onChange = (e) =>
-  this.setState({
+  this.setState({ // set state, get name from event defined below & set to value
     [e.target.name]: e.target.value  // demo react tools to show what happens when value changes when typing
   }
   );
