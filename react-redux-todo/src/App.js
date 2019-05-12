@@ -7,9 +7,7 @@ import './css/main.css';
 
 // Redux
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-
-const store = createStore(() => [], {}, applyMiddleware());
+import store from './store'
 
 
 class App extends Component {
