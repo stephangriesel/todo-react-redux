@@ -7,11 +7,16 @@ import Notes from './components/pages/Notes';
 import './css/main.css';
 
 class App extends Component {
-  state = {
-    todos: []
+  constructor(props) {
+    super(props);
+    state = {
+      todos: []
+    }
   }
 
+
   componentDidMount() {
+    console.log('Todos component did indeed mount...')
     axios.get('http://localhost:3004/todos')
     .then(res => this.setState({ todos: res.data }))
   }
@@ -75,12 +80,11 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state.todos);
+    // console.log(this.state.todos);
     return (
       <Router>
         <div className="App">
           <main className="container">
-            {/* <Header /> */}
             <Route exact path="/" render={props => (
               <React.Fragment>
                 <section id="primary">

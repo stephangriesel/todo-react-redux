@@ -50,7 +50,7 @@ export class TodoItem extends Component {
             <button
               className="save-btn"
               type="submit">
-              <i class="far fa-save"></i>
+              <i className="far fa-save"></i>
               </button>
           </form>
         </div>
@@ -77,7 +77,7 @@ export class TodoItem extends Component {
             <button
               className="delete-btn"
               onClick={this.props.deleteTodo.bind(this, id)}>
-              <i class="far fa-trash-alt"></i>
+              <i className="far fa-trash-alt"></i>
           </button>
           </p>
         </div>
@@ -85,7 +85,7 @@ export class TodoItem extends Component {
           <button
           className="edit-btn"
           onClick={() => this.toggleForm()}>
-          <i class="far fa-edit"></i>
+          <i className="far fa-edit"></i>
           </button>
           {this.showEditTodoForm()}
         </div>

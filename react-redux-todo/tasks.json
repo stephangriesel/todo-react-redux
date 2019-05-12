@@ -1,19 +1,19 @@
 {
   "todos": [
     {
-      "title": "Test",
+      "title": "Test of course",
       "id": 4
     },
     {
-      "title": "Style",
+      "title": "Style nice",
       "id": 5
     },
     {
-      "title": "React",
+      "title": "React cool",
       "id": 6
     },
     {
-      "title": "Redux",
+      "title": "Redux wow",
       "id": 7
     }
   ]
