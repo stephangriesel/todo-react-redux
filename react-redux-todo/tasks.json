@@ -1,21 +1,19 @@
 {
   "todos": [
     {
-      "title": "Test it",
+      "title": "Test",
       "id": 4
     },
     {
-      "title": "Style It again",
+      "title": "Style",
       "id": 5
     },
     {
-      "title": "React It",
-      "completed": false,
+      "title": "React",
       "id": 6
     },
     {
-      "title": "Redux it",
-      "completed": false,
+      "title": "Redux",
       "id": 7
     }
   ]

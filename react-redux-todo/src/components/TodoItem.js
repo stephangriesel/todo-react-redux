@@ -45,7 +45,6 @@ export class TodoItem extends Component {
           <input
               type="text"
               name="title"
-              placeholder="Edit Your Todo"
               defaultValue={title}
             />
             <button

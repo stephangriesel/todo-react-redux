@@ -47,12 +47,12 @@ body a {
 
 main section#card {
   background: #fff;
-  padding: 30px;
+  padding: 10px;
   margin: 1em auto;
-  border-radius: 15px;
+  border-radius: 10px;
   -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  width: 80%;
+  width: 90%;
 }
 
 @media (min-width: 840px) {
@@ -109,6 +109,10 @@ main #card-item .save-btn {
   padding: 10px;
 }
 
+main #card-item #card-item-details {
+  width: 100%;
+}
+
 main #card-item #card-item-edit {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -117,15 +121,24 @@ main #card-item #card-item-edit {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+main #card-item #card-item-edit form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 main #card-item #card-item-edit input {
   padding: 10px;
   outline: none;
   border: 0;
+  width: 65%;
 }
 
 main section#primary {
