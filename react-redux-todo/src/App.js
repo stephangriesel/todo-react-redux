@@ -19,7 +19,6 @@ class App extends Component {
     console.log('Todos component did indeed mount...')
     axios.get('http://localhost:3004/todos')
     .then(res => this.setState({ todos: res.data }))
-    console.log(this.state.todos);
   }
 
   markComplete = (id) => {
