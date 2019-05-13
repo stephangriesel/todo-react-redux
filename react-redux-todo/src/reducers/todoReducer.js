@@ -1,4 +1,4 @@
-import { FETCH_TODOS, NEW_TODO } from '../actions/types';
+// import { FETCH_TODOS, NEW_TODO } from '../actions/types';
 
 const initialState = {
   todos: []

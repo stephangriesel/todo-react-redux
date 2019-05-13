@@ -15,7 +15,8 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "jest": "^24.8.0"
   },
   "scripts": {
     "start": "react-scripts start",

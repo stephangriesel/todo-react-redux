@@ -11,13 +11,6 @@ import store from './store'
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    // state = {
-    //   todos: []
-    // }
-  }
-
   state = {
     todos: []
   }
