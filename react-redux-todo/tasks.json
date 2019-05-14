@@ -1,7 +1,7 @@
 {
   "todos": [
     {
-      "title": "Set up React",
+      "title": "React set up",
       "id": 5
     },
     {
@@ -23,16 +23,6 @@
     {
       "title": "Testing",
       "id": 10
-    },
-    {
-      "title": "Clean up",
-      "completed": false,
-      "id": 11
-    },
-    {
-      "title": "Create video",
-      "completed": false,
-      "id": 12
     }
   ]
 }

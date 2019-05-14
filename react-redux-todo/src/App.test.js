@@ -9,7 +9,7 @@
 //   ReactDOM.unmountComponentAtNode(div);
 // });
 
-// it('App component is loading', () => {
+// it('Todo component is loading', () => {
 //   const div = document.createElement('div');
 //   ReactDOM.render(<TodoItem />, div);
 //   ReactDOM.unmountComponentAtNode(div);
