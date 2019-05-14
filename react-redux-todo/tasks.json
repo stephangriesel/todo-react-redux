@@ -1,24 +1,38 @@
 {
   "todos": [
     {
-      "title": "Style itss",
+      "title": "Set up React",
       "id": 5
     },
     {
-      "title": "React cool",
+      "title": "Add backend",
       "id": 6
     },
     {
-      "title": "Redux wow",
+      "title": "Add logic",
       "id": 7
     },
     {
-      "title": "Watch vid",
+      "title": "Add SASS",
       "id": 8
     },
     {
-      "title": "sddadasd",
+      "title": "Redux",
       "id": 9
+    },
+    {
+      "title": "Testing",
+      "id": 10
+    },
+    {
+      "title": "Clean up",
+      "completed": false,
+      "id": 11
+    },
+    {
+      "title": "Create video",
+      "completed": false,
+      "id": 12
     }
   ]
 }

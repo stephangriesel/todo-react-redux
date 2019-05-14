@@ -1,15 +1,19 @@
 // import React from 'react';
-// import { shallow } from 'enzyme';
-// import AddTodo from './components/AddTodo';
+// import ReactDOM from 'react-dom';
+// import App from './App';
+// import TodoItem from "./components/TodoItem";
 
-
-// describe ('<AddTodo />', () => {
-//   it('renders an editor area', () => {
-//     const editor = shallow(<AddTodo />);
-//     expect(editor.find('input').length).toEqual(1);
-//   });
+// it('App component is loading', () => {
+//   const div = document.createElement('div');
+//   ReactDOM.render(<App />, div);
+//   ReactDOM.unmountComponentAtNode(div);
 // });
 
+// it('App component is loading', () => {
+//   const div = document.createElement('div');
+//   ReactDOM.render(<TodoItem />, div);
+//   ReactDOM.unmountComponentAtNode(div);
+// });
 
 test('Very complicated test', () => {
   expect(true).toBeTruthy();
@@ -18,3 +22,4 @@ test('Very complicated test', () => {
 test('Very complicated test number two', () => {
   expect(true).toBeFalsy();
 });
+

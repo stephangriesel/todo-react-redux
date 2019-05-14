@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 
-// Redux
+// Redux: << Leaving this here for Redux reference
 // import {createStore} from 'redux';
 // import todoReducer from './reducers/todoReducer';
 
@@ -15,6 +15,7 @@ import './index.css';
 
 ReactDOM.render(
   <App />,
+  // Redux: << Leaving this here for Redux reference
   // <Provider store={store}><App /></Provider>,
   document.getElementById('root')
 );

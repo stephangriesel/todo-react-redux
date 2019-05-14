@@ -5,7 +5,7 @@ import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import './css/main.css';
 
-// Redux
+// Redux << Leaving this here for Redux reference
 import { Provider } from 'react-redux';
 import store from './store'
 
@@ -18,7 +18,7 @@ class App extends Component {
   componentDidMount() {
     console.log('Todos component did indeed mount...')
     axios.get('http://localhost:3004/todos')
-    .then(res => this.setState({ todos: res.data }))
+    .then(res => this.setState({ todos: res.data }));
   }
 
   markComplete = (id) => {
@@ -82,7 +82,7 @@ class App extends Component {
   render() {
     // console.log(this.state.todos);
     return (
-      <Provider store={store}>
+      <Provider store={store}> {/* Leaving this here for Redux reference */}
       <Router>
         <div className="App">
           <main className="container">
@@ -113,5 +113,3 @@ class App extends Component {
 }
 
 export default App;
-
-// Some notes: My todo's are app level states (change to redux). The states in components are component level states
